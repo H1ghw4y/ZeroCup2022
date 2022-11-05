@@ -1,0 +1,214 @@
+@font-face {
+    font-family: "SourceHanSansCN-Regular";
+    src: url("../fonts/SourceHanSansCN-Regular.otf");
+}
+
+html {
+    font-size: inherit;
+    font-family: "SourceHanSansCN-Regular";
+}
+
+body {
+    margin: 0;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, #3b3b3b, #254079);
+}
+
+
+.back :hover {
+    transition-duration: 2s;
+    transform: scale(1.2);
+}
+
+
+.fram {
+    padding: 4% 5% 2% 5%;
+    cursor: default;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: calc(2.2 * 1080px);
+}
+
+
+.person {
+    width: 20%;
+    min-width: 290px;
+    break-inside: avoid;
+    text-align: center;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    /*!**!*/
+    /*margin-left: 1em;*/
+    /*margin-right: 1em;*/
+    /*!**!*/
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    background-color: #275394;
+    overflow: hidden;
+    flex-grow: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.person-img {
+    width: 100%;
+    margin-top: 0;
+}
+
+.person p {
+    color: white;
+    font-size: 35px;
+    padding-bottom: 10%;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.card_down {
+    color: white;
+    font-size: 2rem;
+    display: block;
+    height: 80px;
+    padding: 15% 0 10% 0;
+    word-break: break-all;
+    word-wrap: break-word;
+    animation: fadeIn 0.75s;
+    animation-delay: 0s;
+    background-color: #1f6c81;
+    margin: 0;
+}
+
+.data {
+    padding: 0 1rem 1rem;
+    height: auto;
+    font-size: 0.75rem;
+    display: none;
+    text-align: left;
+    list-style: none;
+}
+
+.detail a {
+    text-decoration: none;
+}
+
+.data li {
+    margin-left: calc(1.75rem + 8px);
+}
+
+.data li:first-child {
+    text-align: center;
+    margin-left: 0;
+}
+
+.award {
+    width: 1.75rem;
+    object-fit: contain;
+    float: left;
+    margin: 8px 8px 8px 0;
+}
+
+.data li:first-child img {
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+    margin: 0 8px 0 0;
+}
+
+.data li h1, .data li h2, .data li h3 {
+    margin: 8px;
+}
+
+.person:hover .card_down {
+    display: none;
+}
+
+.person:hover .data {
+    display: block;
+    color: white;
+    background-color: #277394;
+}
+
+.person:hover {
+    transition: all 0.5s;
+    transform: translateY(-10px);
+    background-color: #707070;
+}
+
+.person:hover .person-img {
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.goto {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #C8A06A;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 999999;
+    transition: all 0.5s;
+}
+
+.goto.on {
+    transform: scaleX(2.8);
+    transition: all 0.4s;
+    border-radius: 10%;
+}
+
+.game {
+    opacity: 0;
+    transition: all 1s;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    transform: translate(30%, -35%);
+    z-index: 1000000;
+    cursor: pointer;
+    color: #FFFFFF;
+    transition-delay: 0.35s;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -10px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+li:last-child {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.person a {
+    color: white;
+    border: 1px solid #ffffff;
+    width: 295px;
+    height: 40px;
+    border-radius: 25px;
+    text-decoration: none;
+}

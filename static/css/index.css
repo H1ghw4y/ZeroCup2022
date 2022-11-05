@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: rgb(255, 255, 255);
+}
+
+iframe::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+#pilot {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  right: 2px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  width: 20px;
+  height: 120px;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 80%;
+}
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: snow;
+  backdrop-filter: blur(3px);
+}

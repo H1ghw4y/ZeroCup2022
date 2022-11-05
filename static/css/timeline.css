@@ -1,0 +1,516 @@
+html { 
+    overflow-x:hidden; 
+    overflow-y:hidden;
+}
+
+body {
+    margin: 0;
+    padding:0;
+    background-image:url(../image/HJImage/1111.jpg);
+    /* background-image: url(../img/background.jpg); */
+    /* background-image:url(../img/1920x810.png); */
+    background-size: cover;
+    height: 90vh;
+    width: 100vw;
+}
+@font-face{
+    font-family:'jiangxi';
+    src: url('../../../work/css/jiangxizhuokai.ttf');
+}
+
+/* 标题“航天三步走” */
+#title {
+    width:30vw;
+    font-family:'jiangxi';
+    font-size: 4vh;
+    margin:0 auto;
+    text-align: center;
+    position: relative;
+    top:200px;
+    color:white;
+    opacity: 0;
+}
+@keyframes slide {
+    0% {opacity: 0;top:200px;}
+    80% {opacity: 0.8;top:30px;}
+    100%{opacity: 1;top:50px;}
+}
+#title{
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+}
+#title:hover{
+    scale: 1.1;
+}
+
+/* 三步走内容 */
+.three{
+    height:63vh;
+    width:100vw;
+}
+.three .produre1 .text1:hover{
+    opacity: 0.8;
+}
+.three .produre2 .text2:hover{
+    opacity: 0.8;
+}
+.three .produre3 .text3:hover{
+    opacity: 0.8;
+}
+
+.three .produre1 .text1{
+    position:fixed;
+    margin-top:24vh;
+    margin-left:10vw;
+    float:left;
+    overflow:hidden;
+    height:21vh;
+    width:20vw;
+    box-sizing: border-box;
+    border:rgb(250, 250, 250) solid 0.5vh;
+    border-radius: 3vh;
+}
+
+
+.text1 p{
+    font-family:'jiangxi';
+    font-size: 3vh;
+    margin:0 auto;
+    margin-left:1vw;
+    margin-right:1vw;
+    margin-top:1.4vh;
+    color:white;
+    opacity: 0;
+}
+
+.text1 p{
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+}
+
+
+.three .produre2 .text2{
+    position:fixed;
+    margin-top:10vh;
+    margin-left:40vw;
+    float:left;
+    overflow:hidden;
+    height:30vh;
+    width:20vw;
+    box-sizing: border-box;
+    border:rgb(250, 250, 250) solid 0.5vh;
+    border-radius: 3vh;
+}
+
+.text2 p{
+    font-family:'jiangxi';
+    font-size: 3vh;
+    margin:0 auto;
+    margin-left:1vw;
+    margin-right:1vw;
+    margin-top:2vh;
+    color:white;
+    opacity: 0;
+}
+.text2 p{
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+}
+
+.three .produre3 .text3{
+    position:fixed;
+    margin-top:5vh;
+    margin-left:70vw;
+    margin-right:9vw;
+    float:left;
+    overflow:hidden;
+    height:18vh;
+    width:20vw;
+    box-sizing: border-box;
+    border:rgb(250, 250, 250) solid 0.5vh;
+    border-radius: 3vh;
+}
+
+.text3 p{
+    font-family:'jiangxi';
+    font-size: 3vh;
+    margin:0 auto;
+    margin-left:1vw;
+    margin-right:1vw;
+    margin-top:1.8vh;
+    color:white;
+    opacity: 0;
+}
+.text3 p{
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+}
+
+/* 三根竖线 */
+.three #no1{
+    position:fixed;
+    background-color:white;
+    height:18vh;
+    width:0.3vw;
+    left:20vw;
+    top:66vh;
+}
+.three #no2{
+    position:fixed;
+    background-color:white;
+    height:23vh;
+    width:0.3vw;
+    left:50vw;
+    top:61vh;
+}
+.three #no3{
+    position:fixed;
+    background-color:white;
+    height:40vh;
+    width:0.3vw;
+    left:80vw;
+    top:44vh;
+}
+
+
+/* 8个节点定位 */
+.timeline{
+    margin-top:0vh;
+}
+.timeline .spot1{
+    z-index: 999;
+    position:fixed;
+    left:18vw;      /*-1.5*/
+    top:81vh;
+}
+.timeline .spot2{
+    z-index: 999;
+    position:fixed;
+    left:37.2vw;
+    top:81vh;
+}
+.timeline .spot3{
+    z-index: 999;
+    position:fixed;
+    left:48vw;
+    top:81vh;
+}
+.timeline .spot4{
+    z-index: 999;
+    position:fixed;
+    left:58.2vw;
+    top:81vh;
+}
+.timeline .spot5{
+    z-index: 999;
+    position:fixed;
+    left:64.3vw;
+    top:81vh;
+}
+.timeline .spot6{
+    z-index: 999;
+    position:fixed;
+    left:70.2vw;
+    top:81vh;
+}
+.timeline .spot7{
+    z-index: 999;
+    position:fixed;
+    left:78vw;
+    top:81vh;
+}
+.timeline .spot8{
+    z-index: 999;
+    position:fixed;
+    left:85.2vw;
+    top:81vh;
+}
+
+/* 鼠标划过节点，改变透明度  */
+.timeline .spot1:hover{
+    scale: 1.2;
+}
+.timeline .spot2:hover{
+    scale: 1.2;
+}
+.timeline .spot3:hover{
+    scale: 1.2;
+}
+.timeline .spot4:hover{
+    scale: 1.2;
+}
+.timeline .spot5:hover{
+    scale: 1.2;
+}
+.timeline .spot6:hover{
+    scale: 1.2;
+}
+.timeline .spot7:hover{
+    scale: 1.2;
+}
+.timeline .spot8:hover{
+    scale: 1.2;
+}
+
+
+/* 年份 */
+.year{
+    margin-top:1vh;
+    height:3vh;
+    width:100vw;
+}
+.year p{
+    float:left;
+    overflow:hidden;
+    font-family:'jiangxi';
+    font-size:2vh;
+    color:white;
+}
+.year p:hover{
+    opacity: 0.8;
+}
+#y1992{
+    margin-left:19vw;
+}
+#y2003{
+    margin-left:38vw;
+}
+#y2008{
+    margin-left:48.7vw;
+}
+#y2013{
+    margin-left:59vw;
+}
+#y2016{
+    margin-left:65vw;
+}
+#y2017{
+    margin-left:71vw;
+}
+#y2020{
+    margin-left:79vw;
+}
+#y2022{
+    margin-left:86vw;
+}
+
+/* 事件 */
+#event div p{
+    margin:auto;
+    width:60vw;
+    font-family: "jiangxi";
+    color:white;
+    font-size:1.8vh;
+    text-align: center;
+
+}
+#event{
+    display:block;
+    position:absolute;
+    margin-top:2vh;
+    width:100%;
+    /* height:10vh; */
+}
+
+#event div{
+    margin:1vh 1vh 15vw 15vw;
+    display:none;
+    position:absolute;
+    width:70%;
+    box-sizing: border-box;
+    border:2px white solid;
+    border-radius: 1vh;
+}
+
+.line{
+    position:fixed;
+    top:80vh;
+}
+
+/* 星星 */
+
+.star_1 {
+    position: absolute;
+    top: 8%;
+    left: 4%;
+    animation: star_move_1 5s infinite ease;
+}
+
+img {
+    transition: all 1s linear;
+}
+
+.star_1 img:hover {
+    transition-duration: 2s;
+    transform: scale(1.3);
+}
+
+.star_2 {
+    position: absolute;
+    top: 25%;
+    left: 13%;
+    animation: star_move_1 3s infinite ease;
+}
+
+.star_2 img:hover {
+    transition-duration: 2s;
+    transform: scale(1.2);
+}
+
+.star_3 {
+    position: absolute;
+    top: 15%;
+    left: 22%;
+    animation: star_move_1 2s infinite ease;
+}
+
+.star_3 img {
+    max-height: 15vh;
+    max-width: 15vw;
+    transition: all 1s linear;
+}
+
+.star_3 img:hover {
+    transform: scale(1.3);
+}
+
+.star_4 {
+    position: absolute;
+    top: 19%;
+    left: 30%;
+    animation: star_move_2 3s infinite ease;
+}
+
+.star_4 img {
+    transform: scale(1.3);
+    transition: all 0.5s linear;
+}
+
+.star_4 img:hover {
+    transform: scale(1.5);
+}
+
+.star_5 {
+    position: absolute;
+    top: 12%;
+    left: 45%;
+    animation: star_move_2 5s infinite ease;
+}
+
+.star_5 img:hover {
+    transform: scale(1.2);
+}
+
+.star_6 {
+    position: absolute;
+    top: 5%;
+    left: 55%;
+    animation: star_move_2 3s infinite ease-in-out;
+}
+
+.star_6 img {
+    transform: scale(0.7);
+}
+
+.star_6 img:hover {
+    transform: scale(0.9);
+}
+
+.star_7 {
+    position: absolute;
+    top: 28%;
+    left: 64%;
+    animation: star_move_2 4s infinite ease-in-out;
+}
+
+.star_7 img {
+    transform: scale(0.85);
+}
+
+.star_7 img:hover {
+    transform: scale(1.1);
+}
+
+.star_8 {
+    position: absolute;
+    top: 13%;
+    left: 75%;
+    animation: star_move_2 3s infinite ease-in-out;
+}
+
+.star_8 img {
+    transform: scale(0.9);
+}
+
+.star_8 img:hover {
+    transform: scale(1.2);
+}
+
+.star_9 {
+    position: absolute;
+    top: 10%;
+    left: 87%;
+    animation: star_move_2 4s infinite ease-in-out;
+}
+
+.star_9 img:hover {
+    transform: scale(1.2);
+}
+
+.star_10 {
+    position: absolute;
+    top: 25%;
+    left: 96%;
+    animation: star_move_2 3s infinite ease-in-out;
+}
+
+.star_10 img {
+    transform: scale(0.8);
+}
+
+.star_10 img:hover {
+    transform: scale(1);
+}
+
+
+
+
+@-webkit-keyframes star_move_1 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(0px, -10px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@-webkit-keyframes star_move_2 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(0px, -15px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+
+
+

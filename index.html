@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>中国航天</title>
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/index.js"></script>
+    <style>
+         ::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe id="first" style=" height: 100vh;width: 100vw;padding: 0;margin: 0;border: 0;padding: 0;" frameborder="0" src="FirstPage.html"></iframe>
+    <iframe id="his" style="height: 100vh;width: 100vw;margin: 0;border: 0;padding: 0;" frameborder="0" src="SecondPage.html"></iframe>
+    <iframe id="film" style="height: 100vh;width: 100vw;margin: 0;border: 0;padding: 0 ;" frameborder="0" scrolling="no" src="ThirdPage.html"></iframe>
+    <iframe id="award" style="height: 100vh;width: 100vw;margin: 0;border: 0;padding: 0;" frameborder="0" scrolling="no" src="FourthPage.html"></iframe>
+    <iframe id="end" style="height: 100vh;width: 100vw;margin: 0;border: 0;padding: 0;" frameborder="0" src="FifthPage.html"></iframe>
+    <div id="pilot">
+        <div class="dot" id="q" onclick="javascript:jump(0)"></div>
+        <div class="dot" id="w" onclick="javascript:jump(1)"></div>
+        <div class="dot" id="e" onclick="javascript:jump(2)"></div>
+        <div class="dot" id="r" onclick="javascript:jump(3)"></div>
+        <div class="dot" id="t" onclick="javascript:jump(4)"></div>
+        <div class="dot" id="y" onclick="javascript:jump(5)"></div>
+    </div>
+</body>
+
+</html>

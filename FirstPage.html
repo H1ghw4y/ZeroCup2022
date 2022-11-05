@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style>
+        @font-face {
+            font-family: "JiangXiKaiZhuo";
+            src: url("static/fonts/JiangXiZhuoKai.ttf");
+        }
+
+        body {
+            background-image: url("static/image/LSKImage/img_2.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            height: 100vh;
+            width: 100vh;
+            overflow-y: hidden;
+        }
+
+        #head {
+            position: absolute;
+            color: #eeeeee;
+            font-size: 5em;
+            top: 56%;
+            left: 43.5%;
+            animation: bounceInFromUp 3s ease-in-out;
+        }
+
+        #content {
+            position: absolute;
+            color: #eeeeee;
+            font-size: 4em;
+            top: 72%;
+            left: 40.5%;
+        }
+
+        #content_1 {
+            position: absolute;
+            color: #eeeeee;
+            font-size: 2em;
+            top: 83%;
+            left: 35.5%;
+        }
+
+        #down_line {
+            position: absolute;
+            top: 68.4%;
+            left: 39%;
+            animation: fadein 5s linear;
+        }
+
+        #down_line_in {
+            border-style: solid;
+            border-width: 2px;
+            border-top-style: none;
+            border-left-style: none;
+            border-right-style: none;
+            border-bottom-color: whitesmoke;
+        }
+
+        #content, #content_1 {
+            animation: bounceInFromDown 3s ease-in-out;
+        }
+
+        @keyframes bounceInFromUp {
+            0% {
+                opacity: 0;
+                transform: translate(0px, -30px);
+            }
+            50% {
+                opacity: 0.4;
+                transform: translate(0px, 8px);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes bounceInFromDown {
+            0% {
+                opacity: 0;
+                transform: translate(0px, 30px);
+            }
+            50% {
+                opacity: 0.4;
+                transform: translate(0px, -8px);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="head">
+    <span style="font-family:JiangXiKaiZhuo ">摘星</span>
+</div>
+<div id="content">
+    <span style="font-family:JiangXiKaiZhuo ">从未停止</span>
+</div>
+<div id="content_1">
+    <span style="font-family:JiangXiKaiZhuo ">身游银阙珠宫&nbsp;&nbsp;俯看积气蒙蒙。</span>
+</div>
+<div id="down_line">
+    <span id="down_line_in">&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+</div>
+</body>
+</html>
