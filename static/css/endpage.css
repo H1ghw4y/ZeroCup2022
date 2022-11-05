@@ -1,49 +1,55 @@
-html { 
-    overflow-x:hidden; 
-    overflow-y:hidden;
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 body {
     margin: 0;
-    padding:0;
-    background-image:url(../image/HJImage/2.jpg);
+    padding: 0;
+    background-image: url(../image/HJImage/2.jpg);
     /* background-image: url(../img/background.jpg); */
     /* background-image:url(../img/1920x810.png); */
     /* background-image: linear-gradient(#8331e2, #8331e2,#8331e2); */
-    /* background-size: cover; */
-    height: 100vh;
-    width: 100vw;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
 }
-@font-face{
-    font-family:'jiangxi';
-    src: url('../../../work/css/jiangxizhuokai.ttf');
+
+@font-face {
+    font-family: 'jiangxi';
+    src: url('../fonts/jiangxizhuokai.ttf');
 }
 
 div {
-    font-family:'jiangxi';
+    font-family: 'jiangxi';
     font-size: 6vh;
-    margin:0 auto;
+    margin: 0 auto;
     text-align: center;
     position: relative;
-    top:250px;
-    color:white;
+    top: 250px;
+    color: white;
     opacity: 0;
 }
 
 @keyframes slide {
-    0% {opacity: 0;top:400px;}
-    80% {opacity: 0.8;top:220px;}
-    100%{opacity: 1;top:250px;}
+    0% {
+        opacity: 0;
+        top: 400px;
+    }
+    80% {
+        opacity: 0.8;
+        top: 220px;
+    }
+    100% {
+        opacity: 1;
+        top: 250px;
+    }
 }
 
-div{
+div {
     animation-name: slide;
     animation-fill-mode: forwards;
     animation-duration: 2s;
     animation-delay: 1s;
 }
-
-
-
-
-

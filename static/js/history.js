@@ -1,15 +1,14 @@
 // 轮播图
-// filmArr 图片数组
+// historyArr 图片数组
 // imgWidth 图片宽度
 // aniTime 动画切换时间
 // intervalTime 停留的时间
 // scale 图片缩放
 // autoplay 是否自动播放
 // gap 图片之间间隔
-
 class mainboard {
     constructor(obj) {
-        this.filmArr = obj.filmArr || [];
+        this.historyArr = obj.historyArr || [];
         this.scale = obj.scale || 0.8;
         this.gap = obj.gap;
 
@@ -42,28 +41,28 @@ class mainboard {
     init() {
         this.eventBind();
 
-        let resfilmArr;
-        if (this.filmArr.length > 2) {
-            resfilmArr = [
-                this.filmArr[this.filmArr.length - 2],
-                this.filmArr[this.filmArr.length - 1],
-                ...this.filmArr,
-                this.filmArr[0],
-                this.filmArr[1],
+        let reshistoryArr;
+        if (this.historyArr.length > 2) {
+            reshistoryArr = [
+                this.historyArr[this.historyArr.length - 2],
+                this.historyArr[this.historyArr.length - 1],
+                ...this.historyArr,
+                this.historyArr[0],
+                this.historyArr[1],
             ];
             this.mainDom.style.left = `${-(
                 2 * this.imgWidth +
                 this.gap -
                 this.diffLen
             )}vw`;
-            this.mainDom.style.width = `${(this.filmArr.length + 2) * (this.imgWidth + this.gap / 2)}vw`;
+            this.mainDom.style.width = `${(this.historyArr.length + 2) * (this.imgWidth + this.gap / 2)}vw`;
         } else {
             this.nowIndex = 0;
-            resfilmArr = [...this.filmArr];
+            reshistoryArr = [...this.historyArr];
         }
         let str = "";
-        resfilmArr.forEach((item, index) => {
-            str += `<a href="${resfilmArr[index].url}"><img style="top: 120px; width:320px; height:320px; border-radius:50%;overflow:hidden;" class="mainboard-slide${this.clsSuffix}" style="width: ${this.imgWidth}vw;" src="${resfilmArr[index].imgPath}" /></a>`;
+        reshistoryArr.forEach((item, index) => {
+            str += `<a href="${reshistoryArr[index].url}"><img style="top: 120px; width:320px; height:320px; border-radius:50%;overflow:hidden;" class="mainboard-slide${this.clsSuffix}" style="width: ${this.imgWidth}vw;" src="${reshistoryArr[index].imgPath}" /></a>`;
         });
         this.mainDom.innerHTML = str;
         this.setScale();
@@ -77,10 +76,10 @@ class mainboard {
 
     setScale() {
         for (let i = 0; i < this.imgDoms.length; i++) {
-            if (this.filmArr.length === 2) {
+            if (this.historyArr.length === 2) {
                 this.imgDoms[0].style.left = `${this.containerWidth / 4 - this.imgWidth / 2}vw`;
                 this.imgDoms[1].style.left = `${(this.containerWidth / 4) * 3 - this.imgWidth / 2}vw`;
-            } else if (this.filmArr.length === 1) {
+            } else if (this.historyArr.length === 1) {
                 this.imgDoms[i].style.left = `${this.containerWidth / 2 - this.imgWidth / 2}vw`;
             } else {
                 this.imgDoms[i].style.left = `${(i - 1) * (this.imgWidth + this.gap)}vw`;
@@ -94,10 +93,10 @@ class mainboard {
     }
 
     prevSlider(aniTime) {
-        if (this.filmArr.length === 2) {
+        if (this.historyArr.length === 2) {
             this.nowIndex = this.nowIndex ? 0 : 1;
             this.setScale();
-        } else if (this.filmArr.length === 1) {
+        } else if (this.historyArr.length === 1) {
             return;
         } else {
             this.nowIndex--;
@@ -106,8 +105,8 @@ class mainboard {
             if (this.nowIndex === 1) {
                 this.setScale();
                 setTimeout(
-                    function () {
-                        this.nowIndex = this.filmArr.length + 1;
+                    function() {
+                        this.nowIndex = this.historyArr.length + 1;
                         this.setScale();
                         this.mainDom.style.transitionProperty = "none";
                         this.mainDom.style.left = `${-(
@@ -125,21 +124,21 @@ class mainboard {
     }
 
     nextSlider(aniTime) {
-        if (this.filmArr.length === 2) {
+        if (this.historyArr.length === 2) {
             this.nowIndex = this.nowIndex ? 0 : 1;
             this.setScale();
-        } else if (this.filmArr.length === 1) {
+        } else if (this.historyArr.length === 1) {
             return;
         } else {
             if (this.nowIndex >= 2) {
                 this.mainDom.style.transition = `left ${aniTime / 1000}s`;
                 this.mainDom.style.left = `${parseInt(this.mainDom.style.left) - (this.gap + this.imgWidth)}vw`;
             }
-            if (this.nowIndex === this.filmArr.length + 1) {
-                this.nowIndex = this.filmArr.length + 2;
+            if (this.nowIndex === this.historyArr.length + 1) {
+                this.nowIndex = this.historyArr.length + 2;
                 this.setScale();
                 setTimeout(
-                    function () {
+                    function() {
                         this.nowIndex = 2;
                         this.setScale();
                         this.mainDom.style.transitionProperty = "none";
@@ -157,47 +156,47 @@ class mainboard {
     eventBind() {
         let that = this;
 
-        document.getElementById("next" + this.clsSuffix).onmouseover = function () {
+        document.getElementById("next" + this.clsSuffix).onmouseover = function() {
             clearInterval(that.timer);
         };
-        document.getElementById("next" + this.clsSuffix).onmouseout = function () {
+        document.getElementById("next" + this.clsSuffix).onmouseout = function() {
             that.timer = setInterval(
                 that.nextSlider.bind(that, that.aniTime),
                 that.intervalTime
             );
         };
-        document.getElementById("next" + this.clsSuffix).onclick = function () {
+        document.getElementById("next" + this.clsSuffix).onclick = function() {
             that.throttle(that.nextSlider, 300, 300);
         };
 
-        document.getElementById("prev" + this.clsSuffix).onmouseover = function () {
+        document.getElementById("prev" + this.clsSuffix).onmouseover = function() {
             clearInterval(that.timer);
         };
-        document.getElementById("prev" + this.clsSuffix).onmouseout = function () {
+        document.getElementById("prev" + this.clsSuffix).onmouseout = function() {
             that.timer = setInterval(
                 that.nextSlider.bind(that, that.aniTime),
                 that.intervalTime
             );
         };
-        document.getElementById("prev" + this.clsSuffix).onclick = function () {
+        document.getElementById("prev" + this.clsSuffix).onclick = function() {
             that.throttle(that.prevSlider, 300, 300);
         };
 
-        this.mainDom.addEventListener("touchstart", function (e) {
+        this.mainDom.addEventListener("touchstart", function(e) {
             clearInterval(that.timer);
             that.startX = e.changedTouches[0].clientX;
             that.startY = e.changedTouches[0].clientY;
         });
-        this.mainDom.addEventListener("touchmove", function (e) {
+        this.mainDom.addEventListener("touchmove", function(e) {
             clearInterval(that.timer);
             that.endX = e.changedTouches[0].clientX;
             that.endY = e.changedTouches[0].clientY;
         });
-        this.mainDom.addEventListener("touchend", function (e) {
+        this.mainDom.addEventListener("touchend", function(e) {
             if (!that.mainDom.style.transition) {
                 that.mainDom.style.transition = `left ${that.aniTime / 1000}s`;
             }
-            let angle = that.angle({X: that.startX, Y: that.startY}, {X: that.endX, Y: that.endY});
+            let angle = that.angle({ X: that.startX, Y: that.startY }, { X: that.endX, Y: that.endY });
             if (Math.abs(angle) > 30)
                 return;
             if (that.endX > that.startX) {
@@ -223,10 +222,10 @@ class mainboard {
 }
 
 
-let filmArr = [{
-    url: "javascript:Video1Play()",
-    imgPath: "static/image/LHWImage/1956.jpg",
-},
+let historyArr = [{
+        url: "javascript:Video1Play()",
+        imgPath: "static/image/LHWImage/1956.jpg",
+    },
     {
         imgPath: "./static/image/LHWImage/1958.jpg",
         url: "javascript:Video2Play()",
@@ -254,7 +253,7 @@ let filmArr = [{
 ];
 
 new mainboard({
-    filmArr: filmArr,
+    historyArr: historyArr,
     imgWidth: 22, //@52
     imgHight: 10,
     aniTime: 1000,
@@ -302,8 +301,8 @@ function Video7Play() {
 }
 
 //隐藏视频
-$(document).ready(function () {
-    $(".filmClose").click(function () {
+$(document).ready(function() {
+    $(".filmClose").click(function() {
         $(".Video_1").hide();
         Video1.pause();
         $(".Video_2").hide();
@@ -320,3 +319,18 @@ $(document).ready(function () {
         Video7.pause();
     });
 });
+
+//控制音乐的播放和暂停
+var number = true;
+var music = document.getElementById("music");
+var tb = document.getElementById("tb");
+
+tb.onclick = function() {
+    if (number === false) {
+        number = true;
+        music.pause();
+    } else {
+        number = false;
+        music.play();
+    }
+};

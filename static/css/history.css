@@ -1,24 +1,29 @@
 body {
     margin: 0;
-    /* background-image: linear-gradient(#7480c5, #7c89d4, rgb(161, 171, 238)); */
-    background-image: url("../image/LHWImage/background.jpg");
+    background-image: url("background.jpg");
     background-size: 100% 100%;
     height: 100vh;
     width: 100vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /* background-size: cover; */
+    background-size: cover;
 }
 
-
-/* body {
-    background-image: url("../img/bg.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-} */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        top: 15vh;
+    }
+    75% {
+        opacity: 0.8;
+        top: 10vh;
+    }
+    100% {
+        opacity: 1;
+        top: 5vh;
+    }
+}
 
 @keyframes show {
     0% {
@@ -48,31 +53,79 @@ body {
 }
 
 @font-face {
-    font-family: "film";
-    src: url('../fonts/jx.ttf');
+    font-family: "history";
+    src: url('jx.ttf');
     font-weight: lighter;
     font-style: normal;
 }
 
 #historyDiv {
-    height: 88vh;
+    /* height: 88vh;
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
-    top: -5vh;
+    top: -5vh; */
+    margin: 0 auto;
+    text-align: center;
+    /* font-family: Endpage; */
+    font-size: 4.5rem;
+    line-height: 80px;
+    width: 88%;
+    position: relative;
+    top: 120px;
+    text-shadow: 4px 4px rgba(168, 168, 168, 0.795);
+    opacity: 0;
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
 }
 
 #historyTitle {
     text-align: center;
-    font-family: "film";
+    font-family: "history";
     font-size: 13vh;
     color: whitesmoke;
     width: 100vw;
     text-shadow: 5px 5px rgb(156, 156, 156);
     position: relative;
     top: 5vh;
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        bottom: -10px;
+    }
+    75% {
+        opacity: 0.8;
+        bottom: 20px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 5px;
+    }
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        top: 200px;
+    }
+    75% {
+        opacity: 0.8;
+        top: 100px;
+    }
+    100% {
+        opacity: 1;
+        top: 120px;
+    }
 }
 
 .mainboard-list {
@@ -99,22 +152,22 @@ body {
 
 .leftBtn {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
     z-index: 1002;
-    left: 10px;
+    left: 1vw;
 }
 
 .rightBtn {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
     z-index: 1002;
-    right: 20px;
+    right: 4vw;
 }
 
 #film {
@@ -125,12 +178,6 @@ body {
     left: 0px;
     bottom: 0px;
     backdrop-filter: blur(7px);
-}
-
-#filmContainer {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
 }
 
 .backDrop {
